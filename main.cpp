@@ -73,5 +73,8 @@
 
     //전체 학생 정보 출력 함수
     void printAllStudents() {
-        
+        //석차 기준으로 오름차순 정렬(람다 함수)
+        sort(students.begin(), students.end(), [](const Student& a, const Student& b) {
+            return a.rank < b.rank;
+        });
     }
