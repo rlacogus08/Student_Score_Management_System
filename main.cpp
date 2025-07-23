@@ -23,8 +23,8 @@
 
     //각 기능별 함수 선언 
     void addStudent(); // 학생 정보 추가 
-    void printAllStudents(); // 전체 학생 정보 출력 
     void calculateRanks(); // 석차 계산
+    void printAllStudents(); // 전체 학생 정보 출력 
     void saveDataFromFile(); // 파일에 저장 
     void loadDataFromFile(); // 파일에서 데이터 불러오기
 
@@ -54,8 +54,24 @@
         newStudent.sum = newStudent.kor + newStudent.eng + newStudent.math; //총점 계산
         newStudent.average = newStudent.sum / 3.0; //평균 계산
         students.push_back(newStudent); // 벡터에 학생 정보 추가
+
+    }
+
+    //석차 계산 함수
+    void calculateRanks() {
+        for(int i = 0; i < students.size(); i++) {
+            int rank = 1; //석차 초기화 
+            for(int j = 0; j < students.size(); j++){
+                if(students[i].sum < students[j],sum){
+                    rank++; //현재 학생의 총점이 다른 학생보다 낮으면 석차 증가
+                }
+            }
+            students[i].rank = rank; //석차 저장
+        }
+    }
+
+
+    //전체 학생 정보 출력 함수
+    void printAllStudents() {
         
-
-
-
     }
